@@ -41,6 +41,12 @@ const projects = [
         description: "A dynamically typed programming language that compiles down to register based vm bytecode implemented using Rust",
         link: "https://github.com/TimothyKandiado/NovaLang"
     },
+    {
+        image: "",
+        title: "NyengoApp",
+        description: "A weather forecasting web app built using Vue.js, Go, and MongoDB",
+        link: ""
+    },
     
 ]
 
@@ -49,22 +55,25 @@ const experience = [
         title: "Freelance Desktop App Developer",
         description: "Creating a desktop app called MedRec for storing medical records electronically using Flutter, Go, and SQLite ",
         color: "blue",
-        icon: "mdi: mdi-monitor",
+        dot_icon: "mdi: mdi-monitor",
+        purpose_icon: "mdi: mdi-hospital-box",
         date: "Oct 2023 - Mar 2024"
     }, 
     {
         title: "Freelance Desktop App Developer",
         description: "Creating a desktop app called Malalearn that runs on Windows, and Raspberry Pi 4+ for distributing educational videos to remote areas",
         color: "green",
-        icon: "mdi: mdi-dot-net",
+        dot_icon: "mdi: mdi-dot-net",
+        purpose_icon: "mdi: mdi-school",
         date: "June 2024 - Oct 2024"
     },
     {
         title: "Freelance Web App Developer",
         description: "Building a Progressive Web App called NyengoApp for weather forecasting",
         color: "purple",
-        icon: "mdi: mdi-vuejs",
-        date: "Nov 2024 - Present"
+        dot_icon: "mdi: mdi-vuejs",
+        purpose_icon: "mdi: mdi-cloud",
+        date: "Nov 2024 - Present",
     },
 
 ]
@@ -165,10 +174,10 @@ const isSmallScreen = () => {
         <h2>Experience</h2>
         <v-timeline :side="smAndDown?'end':'opposite'">
             <v-timeline-item 
-                v-for="(item, index) in experience" 
+                v-for="(item, index) in experience.reverse()" 
                 :key="index" 
                 :dot-color="item.color"
-                :icon="item.icon"
+                :icon="item.dot_icon"
                 fill-dot
                 >
                 <template v-slot:opposite v-if="!smAndDown">
@@ -176,7 +185,7 @@ const isSmallScreen = () => {
                 </template>
                 <v-card max-width="500" v-ripple>
                     <v-card-title :class="`bg-`+item.color+`-lighten-3`">
-                        <v-icon class="me-4" icon="mdi: mdi-check"></v-icon>
+                        <v-icon class="me-4" :icon="item.purpose_icon"></v-icon>
                         <h3 class="font-weight-light">
                             {{ item.title }}
                         </h3>
