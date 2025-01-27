@@ -4,6 +4,10 @@ import avatar_img from '@/assets/avatar.jpg'
 import malalearn_splash from '@/assets/portfolio/malalearn.png'
 import medrec_img from '@/assets/portfolio/medrec.png'
 
+import { useDisplay } from 'vuetify'
+
+const {name, smAndDown} = useDisplay()
+
 const languages = ["Rust", "Go", "C#", "Dart", "Python", "Javascript", "Typescript"]
 const frameworks = ["Vue.js", "Flutter", "Unity", "Godot", "Raylib", "Avalonia UI", "Blender"]
 const projects = [
@@ -44,15 +48,31 @@ const experience = [
     {
         title: "Freelance Desktop App Developer",
         description: "Creating a desktop app called MedRec for storing medical records electronically using Flutter, Go, and SQLite ",
-        color: "blue"
+        color: "blue",
+        icon: "mdi: mdi-monitor",
+        date: "Oct 2023 - Mar 2024"
     }, 
     {
         title: "Freelance Desktop App Developer",
         description: "Creating a desktop app called Malalearn that runs on Windows, and Raspberry Pi 4+ for distributing educational videos to remote areas",
-        color: "green"
+        color: "green",
+        icon: "mdi: mdi-dot-net",
+        date: "June 2024 - Oct 2024"
+    },
+    {
+        title: "Freelance Web App Developer",
+        description: "Building a Progressive Web App called NyengoApp for weather forecasting",
+        color: "purple",
+        icon: "mdi: mdi-vuejs",
+        date: "Nov 2024 - Present"
     },
 
 ]
+
+const isSmallScreen = () => {
+    const size = name.value
+    return size === 'sm' || size === "xs";
+}
 </script>
 
 <template>
@@ -143,15 +163,24 @@ const experience = [
     <!-- Experience -->
     <v-container id="experience" class="py-12 elevation-20">
         <h2>Experience</h2>
-        <v-timeline side="end">
+        <v-timeline :side="smAndDown?'end':'opposite'">
             <v-timeline-item 
                 v-for="(item, index) in experience" 
                 :key="index" 
                 :dot-color="item.color"
+                :icon="item.icon"
                 fill-dot
                 >
-                <v-card>
-                    <v-card-title :class="`bg-`+item.color+`-lighten-3`"> {{ item.title }}</v-card-title>
+                <template v-slot:opposite v-if="!smAndDown">
+                    <span :class="`text-${item.color}`">{{ item.date }}</span>
+                </template>
+                <v-card max-width="500" v-ripple>
+                    <v-card-title :class="`bg-`+item.color+`-lighten-3`">
+                        <v-icon class="me-4" icon="mdi: mdi-check"></v-icon>
+                        <h3 class="font-weight-light">
+                            {{ item.title }}
+                        </h3>
+                    </v-card-title>
                     <v-card-text> {{ item.description }}</v-card-text>
                 </v-card>
             </v-timeline-item>
