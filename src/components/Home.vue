@@ -1,9 +1,11 @@
 <script setup>
-const languages = ["Rust", "Go", "C#", "Dart", "Javascript/Typescript"]
-const frameworks = ["Vue.js", "Flutter", "Unity", "Godot", "Raylib"]
+import lost_world_img from '@/assets/portfolio/the-lost-world.png'
+
+const languages = ["Rust", "Go", "C#", "Dart", "Python", "Javascript", "Typescript"]
+const frameworks = ["Vue.js", "Flutter", "Unity", "Godot", "Raylib", "Avalonia UI", "Blender"]
 const projects = [
     {
-        image: "src/assets/portfolio/the-lost-world.png",
+        image: lost_world_img,
         title: "The Lost World",
         description: "A 3D platformer made using Unity and C#",
         link: "https://t-more1010.itch.io/lost-world"
@@ -38,10 +40,10 @@ const experience = [
     </v-app-bar>
 
     <!-- Hero -->
-    <v-container id="hero" class="d-flex align-center justify-center fill-height">
+    <v-container id="hero" class="d-flex align-center justify-center h-50">
         <div>
             <h1>Timothy Kandiado</h1>
-            <p>Game Developer | Fullstack Web Developer | Desktop & Mobile App Creator</p>
+            <p class="py-6"> Chemical Engineer | Game Developer | Fullstack Web Developer | Desktop & Mobile App Developer</p>
             <v-btn large href="#portfolio"> View My Work</v-btn>
         </div>
     </v-container>
@@ -52,7 +54,7 @@ const experience = [
             <v-col cols="12" md="6">
                 <h2>About Me</h2>
                 <p>
-                    A chemical engineer by day, software developer by night
+                    A BEng. in Chemical Engineering Graduate with First Class Honours.
                 </p>
             </v-col>
         </v-row>
