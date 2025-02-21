@@ -73,7 +73,15 @@ const experience = [
         color: "purple",
         dot_icon: "mdi: mdi-vuejs",
         purpose_icon: "mdi: mdi-cloud",
-        date: "Nov 2024 - Present",
+        date: "Nov 2024 - Feb 2025",
+    },
+    {
+      title: "Software Developer",
+      description: "Employed by Tecnozone IT solutions as a Software Developer",
+      color: "blue",
+      dot_icon: "mdi: mdi-monitor",
+      purpose_icon: "mdi: mdi-code-braces",
+      date: "Feb 2025 - Present",
     },
 
 ]
