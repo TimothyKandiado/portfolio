@@ -9,7 +9,7 @@ import { useDisplay } from 'vuetify'
 const {name, smAndDown} = useDisplay()
 
 const languages = ["Rust", "Go", "C#", "Dart", "Python", "Javascript", "Typescript"]
-const frameworks = ["Vue.js", "Flutter", "Unity", "Godot", "Raylib", "Avalonia UI", "Blender"]
+const frameworks = ["Vue.js", "React.js", "Flutter", "Unity", "Godot", "Raylib", "Avalonia UI", "Blender"]
 const projects = [
     {
         image: lost_world_img,
@@ -47,7 +47,7 @@ const projects = [
         description: "A weather forecasting web app built using Vue.js, Go, and MongoDB",
         link: ""
     },
-    
+
 ]
 
 const experience = [
@@ -58,7 +58,7 @@ const experience = [
         dot_icon: "mdi: mdi-monitor",
         purpose_icon: "mdi: mdi-hospital-box",
         date: "Oct 2023 - Mar 2024"
-    }, 
+    },
     {
         title: "Freelance Desktop App Developer",
         description: "Creating a desktop app called Malalearn that runs on Windows, and Raspberry Pi 4+ for distributing educational videos to remote areas",
@@ -90,10 +90,10 @@ const isSmallScreen = () => {
         <v-toolbar-title>Timothy Kandiado</v-toolbar-title>
         <v-spacer></v-spacer>
 
-        <v-btn text href="#about">About</v-btn>
-        <v-btn text href="#portfolio">Portfolio</v-btn>
-        <v-btn text href="#experience">Experience</v-btn>
-        <v-btn text href="#contact">Contact</v-btn>
+        <v-btn href="#about">About</v-btn>
+        <v-btn href="#portfolio">Portfolio</v-btn>
+        <v-btn href="#experience">Experience</v-btn>
+        <v-btn href="#contact">Contact</v-btn>
     </v-app-bar>
 
     <!-- Hero -->
@@ -116,8 +116,8 @@ const isSmallScreen = () => {
             <v-col cols="12" md="6">
                 <h2>About Me</h2>
                 <p class="text-body-1">
-                    I'm a Chemical Engineering graduate with a passion for software and game development. 
-                    I love combining creativity and problem-solving to build impactful applications 
+                    I'm a Chemical Engineering graduate with a passion for software and game development.
+                    I love combining creativity and problem-solving to build impactful applications
                     and immersive experiences.
 
                     Let’s connect!
@@ -150,7 +150,7 @@ const isSmallScreen = () => {
                     <v-card-title> {{ project.title }}</v-card-title>
                     <v-card-text> {{ project.description }}</v-card-text>
                     <v-card-actions v-if="project.link">
-                        <v-btn  text :href="project.link" target="_blank">View</v-btn>
+                        <v-btn :href="project.link" target="_blank">View</v-btn>
                     </v-card-actions>
                 </v-card>
             </v-col>
@@ -162,7 +162,7 @@ const isSmallScreen = () => {
                     <v-card-title> {{ project.title }}</v-card-title>
                     <v-card-text> {{ project.description }}</v-card-text>
                     <v-card-actions v-if="project.link">
-                        <v-btn  text :href="project.link" target="_blank">View</v-btn>
+                        <v-btn :href="project.link" target="_blank">View</v-btn>
                     </v-card-actions>
                 </v-card>
             </v-col>
@@ -173,9 +173,9 @@ const isSmallScreen = () => {
     <v-container id="experience" class="py-12 elevation-20">
         <h2>Experience</h2>
         <v-timeline :side="smAndDown?'end':'opposite'">
-            <v-timeline-item 
-                v-for="(item, index) in experience.reverse()" 
-                :key="index" 
+            <v-timeline-item
+                v-for="(item, index) in experience.reverse()"
+                :key="index"
                 :dot-color="item.color"
                 :icon="item.dot_icon"
                 fill-dot
@@ -199,7 +199,7 @@ const isSmallScreen = () => {
     <!-- Contact -->
     <v-container id="contact" class="py-16">
         <h2>Contact</h2>
-        
+
         <a>
             <v-icon icon="mdi: mdi-email"></v-icon>
             kandiadotimothy@gmail.com
